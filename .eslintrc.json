@@ -1,0 +1,31 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "plugins": ["prettier", "@typescript-eslint"],
+    "extends": ["airbnb-typescript", "react-app", "prettier"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "tsconfigRootDir": __dirname
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {
+          "alwaysTryTypes": true
+        }
+      }
+    },
+    "rules": {
+      "prettier/prettier": ["error", {
+        "printWidth": 100,
+        "useTabs": false,
+        "jsxSingleQuote": true,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "tabWidth": 2
+      }]
+    }
+}

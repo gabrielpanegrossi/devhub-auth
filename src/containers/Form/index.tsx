@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector, useDispatch } from 'react-redux';
+import { setName } from '../../state';
 
 function Form() {
   const {
@@ -9,6 +11,8 @@ function Form() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data: {}) => console.log(data);
+  const name = useSelector((state) => state);
+  console.log(name);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

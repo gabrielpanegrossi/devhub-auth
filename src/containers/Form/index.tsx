@@ -1,17 +1,21 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Data } from './interface';
 import { setName } from '../../state';
 
 function Form() {
+  const name = useSelector((state) => state);
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: {}) => console.log(data);
-  const name = useSelector((state) => state);
+  const onSubmit = (data: Data) => {
+    console.log(typeof data.username);
+    dispatch(setName(data.username));
+  };
   console.log(name);
 
   return (

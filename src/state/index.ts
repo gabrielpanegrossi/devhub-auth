@@ -1,18 +1,23 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
+import { Profile } from './interface';
 
 const initialtState = {
-  name: '',
+  profile: {
+    username: '',
+    picture: '',
+    description: '',
+  },
 };
 
 //action creators
-export const setName = createAction<string | undefined>('SET_Name');
+export const setProfile = createAction<Profile | undefined>('SET_Name');
 
 //reducer
 export const profileReducer = createReducer(
   initialtState,
   {
-    [setName.type]: (state, action) => {
-      state.name = action.payload;
+    [setProfile.type]: (state, action) => {
+      state.profile = action.payload;
     },
   },
   [],

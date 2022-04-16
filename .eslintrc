@@ -23,6 +23,13 @@
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true
+      },
+      "alias": {
+        "map": [
+          ["@hooks/", "./src/hooks"],
+          ["@components", "./src/components"]
+        ],
+        "extensions": [".ts", ".js", ".jsx", ".tsx", ".json"]
       }
     }
   },

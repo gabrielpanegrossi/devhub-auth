@@ -1,5 +1,4 @@
-export interface Payload {
+export interface Values {
   username?: string;
-  picture?: [];
   description?: string;
 }

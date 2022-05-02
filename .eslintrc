@@ -26,10 +26,12 @@
       },
       "alias": {
         "map": [
-          ["@hooks/", "./src/hooks"],
-          ["@components", "./src/components"]
+          ["~hooks", "./src/hooks"],
+          ["~components", "./src/components"],
+          ["~containers", "./src/containers"],
+          ["~services", "./src/services"]
         ],
-        "extensions": [".ts", ".js", ".jsx", ".tsx", ".json"]
+        "extensions": [".ts", ".js", ".tsx", ".json"]
       }
     }
   },

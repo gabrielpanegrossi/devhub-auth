@@ -1,33 +1,48 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { Payload } from './interface';
+import { Form, Field, Button, Text, Link } from '~components';
+import { Values } from './interface';
+import { validationSchema } from './schema';
+import * as Styled from './style';
 
-function Form() {
-  const dispatch = useDispatch();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (payload: Payload) => {
-    console.log(payload);
+function Auth() {
+  const initialValues = {
+    email: '',
+    password: '',
+  };
+
+  const handleSubmit = (values: Values) => {
+    console.log(values);
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {/* register your input into the hook by invoking the "register" function */}
-      <input {...register('email')} />
-      <input {...register('password')} />
-
-      {/* include validation with required or other standard HTML validation rules */}
-      {/* <input {...register('lastName', { required: true })} /> */}
-      {/* errors will return when field validation fails  */}
-      {/* {errors.lastName && <span>This field is required</span>} */}
-
-      <button>submit</button>
-    </form>
+    <Styled.Container>
+      <Styled.Content>
+        <Styled.Article>
+          <Styled.Title>DevHub</Styled.Title>
+          <Styled.Text>All your dev world in one place.</Styled.Text>
+        </Styled.Article>
+        <Styled.Aside>
+          <Styled.Auth>
+            <Form
+              onSubmit={handleSubmit}
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+            >
+              <Field name='email' label='Email' />
+              <Field name='password' label='Password' type='password' />
+              <Button>Log In</Button>
+              <Styled.Link to='/resetpassword'>Forgot password?</Styled.Link>
+            </Form>
+          </Styled.Auth>
+          <Styled.Register>
+            <Text>Don't have an account?</Text>
+            <Link to='/signup'>Sign up</Link>
+          </Styled.Register>
+        </Styled.Aside>
+      </Styled.Content>
+    </Styled.Container>
   );
 }
 
-export default Form;
+export default Auth;

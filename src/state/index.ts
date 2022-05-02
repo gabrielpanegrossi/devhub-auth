@@ -1,7 +1,8 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
-import { Profile } from './interface';
+import { createAction, createReducer, configureStore } from '@reduxjs/toolkit';
+import { Profile, User } from './interface';
 
 const initialtState = {
+  userId: 'default.jpeg',
   profile: {
     username: '',
     picture: '',
@@ -10,7 +11,8 @@ const initialtState = {
 };
 
 //action creators
-export const setProfile = createAction<Profile | undefined>('SET_Name');
+export const setProfile = createAction<Profile | undefined>('SET_Profile');
+export const setUserId = createAction<User | undefined>('SET_UserId');
 
 //reducer
 export const profileReducer = createReducer(
@@ -19,7 +21,16 @@ export const profileReducer = createReducer(
     [setProfile.type]: (state, action) => {
       state.profile = action.payload;
     },
+    [setUserId.type]: (state, action) => {
+      state.userId = action.payload;
+    },
   },
   [],
   (state) => state
 );
+
+export const store = configureStore({
+  reducer: {
+    profile: profileReducer,
+  },
+});

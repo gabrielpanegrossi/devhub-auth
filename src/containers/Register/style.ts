@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Text as DefaultText, Link as DefaultLink, Title as DefaultTitle } from '~components';
+import { Text as DefaultText, Link as DefaultLink, Subtitle as DefaultSubtitle } from '~components';
 
 export const Container = styled.section`
   display: flex;
@@ -14,29 +14,19 @@ export const Container = styled.section`
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  height: 100%;
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
 
   @media (min-width: 1024px) {
-    flex-direction: row;
+    display: flex;
+    justify-content: center;
   }
 `;
 
-export const Article = styled.article`
-  width: 100%;
-  margin-top: 24px;
-  margin-bottom: 24px;
-
-  @media (min-width: 1024px) {
-    width: 50%;
-    margin-bottom: 0;
-  }
-`;
-
-export const Aside = styled.aside`
+export const Handler = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,7 +46,7 @@ export const Aside = styled.aside`
   }
 `;
 
-export const Auth = styled.section`
+export const Register = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,7 +54,7 @@ export const Auth = styled.section`
   width: 100%;
 `;
 
-export const Register = styled.section`
+export const Auth = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -77,13 +67,12 @@ export const Register = styled.section`
   }
 `;
 
-export const Title = styled(DefaultTitle)`
+export const Subtitle = styled(DefaultSubtitle)`
   width: fit-content;
-  margin: 0 auto;
-
-  @media (min-width: 1024px) {
-    margin: 0;
-  }
+  margin: 16px auto 0;
+  color: #fff;
+  letter-spacing: 5px;
+  text-transform: uppercase;
 `;
 
 export const Text = styled(DefaultText)`
@@ -94,6 +83,10 @@ export const Text = styled(DefaultText)`
   @media (min-width: 1024px) {
     margin: 0;
   }
+`;
+
+export const SubText = styled(DefaultText)`
+  color: #fff;
 `;
 
 export const Link = styled(DefaultLink)`

@@ -3,44 +3,15 @@ import { firebaseApp } from './app';
 
 const firebaseStorage = getStorage(firebaseApp);
 
-function uploadFile(file: Blob | Uint8Array | ArrayBuffer) {
-  const storageRef = ref(firebaseStorage, 'some-child');
-
-  // 'file' comes from the Blob or File API
-  uploadBytes(storageRef, file).then((snapshot) => {
-    console.log('Uploaded a blob or file!', snapshot);
-  });
+function uploadFile(filename: string, file: File) {
+  const storageRef = ref(firebaseStorage, filename);
+  return uploadBytes(storageRef, file);
 }
 
-function getFile() {
-  const starsRef = ref(firebaseStorage, 'images/stars.jpg');
+function getFile(filename: string) {
+  const starsRef = ref(firebaseStorage, filename);
 
-  // Get the download URL
-  getDownloadURL(starsRef)
-    .then((url) => {
-      // Insert url into an <img> tag to "download"
-    })
-    .catch((error) => {
-      // A full list of error codes is available at
-      // https://firebase.google.com/docs/storage/web/handle-errors
-      switch (error.code) {
-        case 'storage/object-not-found':
-          // File doesn't exist
-          break;
-        case 'storage/unauthorized':
-          // User doesn't have permission to access the object
-          break;
-        case 'storage/canceled':
-          // User canceled the upload
-          break;
-
-        // ...
-
-        case 'storage/unknown':
-          // Unknown error occurred, inspect the server response
-          break;
-      }
-    });
+  return getDownloadURL(starsRef);
 }
 
 function deleteFile() {

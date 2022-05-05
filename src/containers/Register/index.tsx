@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Form, Field, Button, Text, Link } from '~components';
 import { Values } from './interface';
 import { validationSchema } from './schema';
-import { signUp } from '~services/firebase';
+import { signUp, firestore } from '~services/firebase';
 import * as Styled from './style';
 import { setUserId } from '../../state';
 
@@ -18,10 +18,17 @@ function Register() {
   };
 
   const handleSubmit = async (values: Values) => {
-    const { email, password } = values;
-    const result = await signUp(email, password);
-    console.log(values);
-    dispatch(setUserId(result?.user.uid));
+    const { email, password, name, lastName } = values;
+    const registerResponse = await signUp(email, password);
+    if (registerResponse) {
+      await firestore.newDoc('user', registerResponse?.user.uid || values.email, {
+        email,
+        name,
+        lastName,
+      });
+    }
+
+    // dispatch(setUserId(registerResponse?.user.uid));
   };
 
   return (

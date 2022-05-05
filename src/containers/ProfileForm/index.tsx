@@ -34,12 +34,10 @@ function ProfileForm() {
   return (
     <>
       <div>
-        <h1>{store.profile.username}</h1>
         <h2>{store.profile.description}</h2>
         <img src={store.profile.picture} alt={`${store.profile.username}`} />
       </div>
       <Form onSubmit={handleSubmit} initialValues={initialValues}>
-        <Field name='username' label='Name *' />
         <Input
           name='profilePicture'
           type='file'

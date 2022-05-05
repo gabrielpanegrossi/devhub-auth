@@ -4,7 +4,9 @@ import { Profile, User } from './interface';
 const initialtState = {
   userId: 'default.jpeg',
   profile: {
-    username: '',
+    email: '',
+    name: '',
+    lastName: '',
     picture: '',
     description: '',
   },
@@ -19,7 +21,7 @@ export const profileReducer = createReducer(
   initialtState,
   {
     [setProfile.type]: (state, action) => {
-      state.profile = action.payload;
+      state.profile = { ...state.profile, ...action.payload };
     },
     [setUserId.type]: (state, action) => {
       state.userId = action.payload;

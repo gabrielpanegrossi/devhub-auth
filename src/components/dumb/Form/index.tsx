@@ -1,11 +1,11 @@
 import React from 'react';
 import { Props } from './interface';
-import { Formik, Form as FormikForm } from 'formik';
+import { Formik } from 'formik';
 import * as Styled from './style';
 
-export function Form<Values>({ children, ...props }: Props<Values>) {
+function Form<Values>({ children, ...props }: Props<Values>) {
   return (
-    <Formik {...props}>
+    <Formik {...props} validateOnMount>
       {(formikProps) => (
         <Styled.FormikForm>
           {typeof children === 'function' ? children(formikProps) : children}
@@ -14,3 +14,5 @@ export function Form<Values>({ children, ...props }: Props<Values>) {
     </Formik>
   );
 }
+
+export default Form;

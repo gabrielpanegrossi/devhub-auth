@@ -6,8 +6,6 @@ const Router = () => {
     <Routes>
       <Route index element={<Auth />} />
       <Route path='/signup' element={<Register />} />
-      <Route index element={<Profile />} />
-      <Route index element={<ProfileForm />} />
     </Routes>
   );
 };

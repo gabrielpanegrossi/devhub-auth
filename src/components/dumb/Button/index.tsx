@@ -2,10 +2,18 @@ import React from 'react';
 import { Props } from './interface';
 import * as Styled from './style';
 
-export function Button({ children, kind, type = 'submit' }: Props) {
+export function Button({ children, kind, type = 'button', loading, disabled }: Props) {
   return (
-    <Styled.Button kind={kind} type={type} data-content={children}>
-      {children}
-    </Styled.Button>
+    <Styled.Container>
+      <Styled.Button
+        kind={kind}
+        disabled={disabled || loading}
+        type={type}
+        data-content={loading ? '' : children}
+      >
+        {!loading && children}
+      </Styled.Button>
+      {loading && <Styled.Spinner width={34} height={34} />}
+    </Styled.Container>
   );
 }

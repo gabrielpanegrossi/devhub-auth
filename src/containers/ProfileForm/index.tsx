@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Field, Form, Input } from '~components';
 import { useSelector, useDispatch } from '~hooks';
-import { storage } from '~services/firebase';
 import { Values } from './interface';
 import { setProfile } from '../../state';
 
@@ -12,13 +11,7 @@ function ProfileForm() {
   console.log(store);
 
   const handleSubmit = async (values: Values) => {
-    try {
-      await storage.uploadFile(store.user, profilePicture);
-      const picture = await storage.getFile(store.user);
-      dispatch(setProfile({ ...values, picture }));
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(values);
   };
 
   const handleInputFile = (event: React.ChangeEvent<HTMLInputElement>) => {

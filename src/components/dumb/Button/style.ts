@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Props } from './interface';
+import { Spinner as DefaultSpinner } from '../Spinner';
 
 export const buttonKind = {
   primary: `color:#fff; 
@@ -28,6 +29,7 @@ export const buttonKind = {
               border-radius: 10px;
               transition: opacity 2s;
               opacity:0;
+              z-index:1;
             }
             &:hover::before{
               opacity:1;
@@ -45,10 +47,27 @@ export const buttonKind = {
 export const Button = styled.button<Props>`
   position: relative;
   width: 100%;
-  max-width: 285px;
   height: 40px;
   border-radius: 10px;
   font-size: 10px;
   cursor: pointer;
   ${({ kind = 'primary' }) => buttonKind[kind]}
+
+  &:disabled {
+    opacity: 0.5;
+  }
+`;
+
+export const Container = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 285px;
+`;
+
+export const Spinner = styled(DefaultSpinner)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
 `;

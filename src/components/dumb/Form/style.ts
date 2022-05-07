@@ -9,11 +9,7 @@ export const FormikForm = styled(Form)`
   height: 100%;
   padding: 24px;
 
-  > div:not(:first-child) {
-    margin-top: 24px;
-  }
-
-  button {
+  > :not(:first-child) {
     margin-top: 24px;
   }
 `;

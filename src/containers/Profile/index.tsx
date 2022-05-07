@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field, Form, Input } from '~components';
 import { useSelector, useDispatch } from '~hooks';
-import { storage } from '../../services/firebase';
 
 function Profile() {
   const store = useSelector();

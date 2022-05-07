@@ -1,7 +1,6 @@
 import { buttonKind } from './style';
 
-export interface Props {
-  children: string;
+export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   kind?: keyof typeof buttonKind;
-  type?: 'submit' | 'reset' | 'button';
+  loading?: boolean;
 }

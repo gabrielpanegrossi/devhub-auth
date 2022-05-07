@@ -1,14 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { FormikHelpers } from 'formik';
 import { Form, Field, Button, Text, Link } from '~components';
 import { Values } from './interface';
 import { validationSchema } from './schema';
-import { signUp, firestore } from '~services/firebase';
 import * as Styled from './style';
-import { setUserId } from '../../state';
+import { useRequest } from 'ahooks';
+import { auth } from '~services';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
-  const dispatch = useDispatch();
   const initialValues = {
     name: '',
     lastName: '',
@@ -16,19 +16,13 @@ function Register() {
     password: '',
     passwordConfirmation: '',
   };
+  const navigate = useNavigate();
 
-  const handleSubmit = async (values: Values) => {
-    const { email, password, name, lastName } = values;
-    const registerResponse = await signUp(email, password);
-    if (registerResponse) {
-      await firestore.newDoc('user', registerResponse?.user.uid || values.email, {
-        email,
-        name,
-        lastName,
-      });
-    }
+  const { runAsync, loading } = useRequest(auth.register, { manual: true });
 
-    // dispatch(setUserId(registerResponse?.user.uid));
+  const handleSubmit = async (values: Values, helpers: FormikHelpers<Values>) => {
+    await runAsync(values);
+    navigate('/');
   };
 
   return (
@@ -43,12 +37,28 @@ function Register() {
               initialValues={initialValues}
               validationSchema={validationSchema}
             >
-              <Field name='name' label='Name *' />
-              <Field name='lastName' label='Last Name *' />
-              <Field name='email' label='Email *' />
-              <Field name='password' label='Password *' type='password' />
-              <Field name='passwordConfirmation' label='Confirm your password *' type='password' />
-              <Button>Sign Up</Button>
+              {({ isValid, values }: { isValid: boolean; values: Values }) => (
+                <>
+                  <Field name='name' label='Name *' value={values.name} autoFocus={true} />
+                  <Field name='lastName' label='Last Name *' value={values.lastName} />
+                  <Field name='email' label='Email *' value={values.email} />
+                  <Field
+                    name='password'
+                    label='Password *'
+                    type='password'
+                    value={values.password}
+                  />
+                  <Field
+                    name='passwordConfirmation'
+                    label='Confirm your password *'
+                    type='password'
+                    value={values.passwordConfirmation}
+                  />
+                  <Button type='submit' loading={loading} disabled={!isValid}>
+                    Sign Up
+                  </Button>
+                </>
+              )}
             </Form>
           </Styled.Register>
           <Styled.Auth>

@@ -3,7 +3,7 @@ import { useField } from 'formik';
 import { Props } from './interface';
 import * as Styled from './style';
 
-export function Field({ label, ...props }: Props) {
+export function Field({ label, children, ...props }: Props) {
   const [field, meta, helpers] = useField(props);
   const handleChange = (event: React.InputHTMLAttributes<HTMLInputElement>) => {
     field.onChange(event);

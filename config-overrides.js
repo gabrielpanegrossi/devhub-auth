@@ -9,6 +9,7 @@ module.exports = {
       '~hooks': path.resolve(__dirname, './src/hooks'),
       '~containers': path.resolve(__dirname, './src/containers'),
       '~services': path.resolve(__dirname, './src/services'),
+      '~utils': path.resolve(__dirname, './src/utils'),
     })
   ),
 };

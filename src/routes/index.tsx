@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { ProfileForm, Auth, Profile, Register } from '~containers';
+import { Auth, Register } from '~containers';
 
 const Router = () => {
   return (

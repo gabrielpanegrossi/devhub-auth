@@ -29,7 +29,8 @@
           ["~hooks", "./src/hooks"],
           ["~components", "./src/components"],
           ["~containers", "./src/containers"],
-          ["~services", "./src/services"]
+          ["~services", "./src/services"],
+          ["~utils", "./src/utils"]
         ],
         "extensions": [".ts", ".js", ".tsx", ".json"]
       }

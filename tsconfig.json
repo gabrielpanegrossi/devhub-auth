@@ -28,6 +28,8 @@
       "~containers": ["./src/containers"],
       "~services/*": ["./src/services/*"],
       "~services": ["./src/services"],
+      "~utils/*": ["./src/utils/*"],
+      "~utils": ["./src/utils"],
     }
   },
   "include": [

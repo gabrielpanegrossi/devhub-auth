@@ -1,12 +1,12 @@
 import React from 'react';
 import { FormikHelpers } from 'formik';
+import { useRequest } from 'ahooks';
+import { useNavigate } from 'react-router-dom';
 import { Form, Field, Button, Text, Link } from '~components';
+import { auth } from '~services';
 import { Values } from './interface';
 import { validationSchema } from './schema';
 import * as Styled from './style';
-import { useRequest } from 'ahooks';
-import { auth } from '~services';
-import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const initialValues = {
@@ -37,7 +37,7 @@ function Register() {
               initialValues={initialValues}
               validationSchema={validationSchema}
             >
-              {({ isValid, values }: { isValid: boolean; values: Values }) => (
+              {({ values }: { values: Values }) => (
                 <>
                   <Field name='name' label='Name *' value={values.name} autoFocus={true} />
                   <Field name='lastName' label='Last Name *' value={values.lastName} />
@@ -54,7 +54,7 @@ function Register() {
                     type='password'
                     value={values.passwordConfirmation}
                   />
-                  <Button type='submit' loading={loading} disabled={!isValid}>
+                  <Button type='submit' loading={loading}>
                     Sign Up
                   </Button>
                 </>

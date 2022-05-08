@@ -1,6 +1,7 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useRequest } from 'ahooks';
 import { Form, Field, Button, Text, Link } from '~components';
+import { auth } from '~services';
 import { Values } from './interface';
 import { validationSchema } from './schema';
 import * as Styled from './style';
@@ -10,6 +11,8 @@ function Auth() {
     email: '',
     password: '',
   };
+
+  const { runAsync, loading } = useRequest(auth.signin, { manual: true });
 
   const handleSubmit = (values: Values) => {
     console.log(values);

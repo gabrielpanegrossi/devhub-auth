@@ -6,13 +6,13 @@ const Handler = [
     if (req.body.email === 'gabriel@gmail.com')
       return res(
         ctx.delay(1000),
-        ctx.status(200),
+        ctx.status(201),
         ctx.json({ status: 'success', message: `User created!` })
       );
 
     return res(
       ctx.delay(1000),
-      ctx.status(200),
+      ctx.status(406),
       ctx.json({ status: 'error', message: `Try again later.` })
     );
   }),

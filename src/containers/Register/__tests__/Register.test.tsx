@@ -1,15 +1,26 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { setupServer } from 'msw/node';
-import * as MockReactRouterDom from 'react-router-dom';
-import { handlers } from '~mocks/handlers';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Register from '../index';
 import userEvent from '@testing-library/user-event';
-
-jest.setTimeout(15000);
+import * as MockReactRouterDom from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { setupServer } from 'msw/node';
+import { handlers } from '~mocks/handlers';
+import Register from '../index';
 
 const server = setupServer(...handlers);
 const mockNavigate = jest.fn();
+
+jest.mock('ahooks', () => ({
+  useRequest: () => ({
+    runAsync: async () => {},
+    loading: false,
+  }),
+}));
+
+jest.mock('~services', () => ({
+  auth: {
+    validateEmail: async () => ({ isValid: true }),
+  },
+}));
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual<typeof MockReactRouterDom>('react-router-dom'),
@@ -55,12 +66,12 @@ describe('Register flow', () => {
   it('should submit form and navigate to next page', async () => {
     const user = userEvent.setup();
 
-    const button = screen.queryByRole('button');
-    const nameField = screen.queryByLabelText('name');
-    const lastNameField = screen.queryByLabelText('lastName');
-    const emailField = screen.queryByLabelText('email');
-    const passwordField = screen.queryByLabelText('password');
-    const confirmPasswordField = screen.queryByLabelText('passwordConfirmation');
+    const button = screen.getByRole('button');
+    const nameField = screen.getByLabelText('name');
+    const lastNameField = screen.getByLabelText('lastName');
+    const emailField = screen.getByLabelText('email');
+    const passwordField = screen.getByLabelText('password');
+    const confirmPasswordField = screen.getByLabelText('passwordConfirmation');
 
     await user.type(nameField, 'Gabriel');
     await user.type(lastNameField, 'Santos');

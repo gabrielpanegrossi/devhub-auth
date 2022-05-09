@@ -20,9 +20,7 @@ function Register() {
   const { runAsync, loading } = useRequest(auth.register, { manual: true });
 
   const handleSubmit = async (values: Values) => {
-    console.log('primeiro');
     await runAsync(values);
-    console.log('segundo');
     navigate('/');
   };
 

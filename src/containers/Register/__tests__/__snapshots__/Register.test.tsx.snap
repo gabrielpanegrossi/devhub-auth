@@ -1,0 +1,1025 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register flow should match snpashot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .c9 {
+  width: 100%;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.c11 {
+  width: 100%;
+  height: 40px;
+  margin-top: 8px;
+  border-radius: 3px;
+  outline: transparent;
+  padding: 0 8px;
+}
+
+.c13 {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 10px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #fff;
+  background: #A154F2;
+  text-transform: uppercase;
+  font-size: 14px;
+  -webkit-letter-spacing: 2.5px;
+  -moz-letter-spacing: 2.5px;
+  -ms-letter-spacing: 2.5px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.c13:hover {
+  background: #F27A54;
+}
+
+.c13:before {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  content: ""attr(data-content)"";
+  width: 100%;
+  height: 100%;
+  top: -1px;
+  left: -1px;
+  background: #F27A54;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.c13:hover::before {
+  opacity: 1;
+  background: linear-gradient(90deg,#F27A54 0%,#A154F2 100%);
+}
+
+.c13:disabled {
+  opacity: 0.5;
+}
+
+.c12 {
+  position: relative;
+  width: 100%;
+  max-width: 285px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.c8 > :not(:first-child) {
+  margin-top: 24px;
+}
+
+.c4 {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.c15 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c15:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px;
+  height: 100%;
+  background: #f2f4f7;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 448px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.c2 > section {
+  background: #3c444c;
+  border-radius: 5px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.c14 > p {
+  color: #fff;
+  margin-right: 8px;
+}
+
+.c5 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 16px auto 0;
+  color: #fff;
+  -webkit-letter-spacing: 5px;
+  -moz-letter-spacing: 5px;
+  -ms-letter-spacing: 5px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.c7 {
+  color: #fff;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    width: 50%;
+  }
+}
+
+<body>
+    <div>
+      <section
+        class="c0"
+      >
+        <div
+          class="c1"
+        >
+          <div
+            class="c2"
+          >
+            <section
+              class="c3"
+            >
+              <h2
+                class="c4 c5"
+              >
+                Sign Up
+              </h2>
+              <p
+                class="c6 c7"
+              >
+                Access all your dev content on the same place!
+              </p>
+              <form
+                action="#"
+                aria-labelledby="register-form-title"
+                class="c8"
+              >
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Name *
+                    <input
+                      aria-label="name"
+                      class="c11"
+                      name="name"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Last Name *
+                    <input
+                      aria-label="lastName"
+                      class="c11"
+                      name="lastName"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Email *
+                    <input
+                      aria-label="email"
+                      class="c11"
+                      name="email"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Password *
+                    <input
+                      aria-label="password"
+                      class="c11"
+                      name="password"
+                      type="password"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Confirm your password *
+                    <input
+                      aria-label="passwordConfirmation"
+                      class="c11"
+                      name="passwordConfirmation"
+                      type="password"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c12"
+                >
+                  <button
+                    class="c13"
+                    data-content="Sign Up"
+                    type="submit"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </form>
+            </section>
+            <section
+              class="c14"
+            >
+              <p
+                class="c6"
+              >
+                Do you have an account?
+              </p>
+              <a
+                class="c15"
+                href="/"
+              >
+                Log in
+              </a>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div>
+      <section
+        class="c0"
+      >
+        <div
+          class="c1"
+        >
+          <div
+            class="c2"
+          >
+            <section
+              class="c3"
+            >
+              <h2
+                class="c4 c5"
+              >
+                Sign Up
+              </h2>
+              <p
+                class="c6 c7"
+              >
+                Access all your dev content on the same place!
+              </p>
+              <form
+                action="#"
+                aria-labelledby="register-form-title"
+                class="c8"
+              >
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Name *
+                    <input
+                      aria-label="name"
+                      class="c11"
+                      name="name"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Last Name *
+                    <input
+                      aria-label="lastName"
+                      class="c11"
+                      name="lastName"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Email *
+                    <input
+                      aria-label="email"
+                      class="c11"
+                      name="email"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Password *
+                    <input
+                      aria-label="password"
+                      class="c11"
+                      name="password"
+                      type="password"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c9"
+                >
+                  <label
+                    class="c10"
+                  >
+                    Confirm your password *
+                    <input
+                      aria-label="passwordConfirmation"
+                      class="c11"
+                      name="passwordConfirmation"
+                      type="password"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div
+                  class="c12"
+                >
+                  <button
+                    class="c13"
+                    data-content="Sign Up"
+                    type="submit"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </form>
+            </section>
+            <section
+              class="c14"
+            >
+              <p
+                class="c6"
+              >
+                Do you have an account?
+              </p>
+              <a
+                class="c15"
+                href="/"
+              >
+                Log in
+              </a>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>,
+  "container": .c9 {
+  width: 100%;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  font-size: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.c11 {
+  width: 100%;
+  height: 40px;
+  margin-top: 8px;
+  border-radius: 3px;
+  outline: transparent;
+  padding: 0 8px;
+}
+
+.c13 {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 10px;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #fff;
+  background: #A154F2;
+  text-transform: uppercase;
+  font-size: 14px;
+  -webkit-letter-spacing: 2.5px;
+  -moz-letter-spacing: 2.5px;
+  -ms-letter-spacing: 2.5px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+.c13:hover {
+  background: #F27A54;
+}
+
+.c13:before {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  content: ""attr(data-content)"";
+  width: 100%;
+  height: 100%;
+  top: -1px;
+  left: -1px;
+  background: #F27A54;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.c13:hover::before {
+  opacity: 1;
+  background: linear-gradient(90deg,#F27A54 0%,#A154F2 100%);
+}
+
+.c13:disabled {
+  opacity: 0.5;
+}
+
+.c12 {
+  position: relative;
+  width: 100%;
+  max-width: 285px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.c8 > :not(:first-child) {
+  margin-top: 24px;
+}
+
+.c4 {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.c15 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c15:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px;
+  height: 100%;
+  background: #f2f4f7;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 448px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.c2 > section {
+  background: #3c444c;
+  border-radius: 5px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.c14 > p {
+  color: #fff;
+  margin-right: 8px;
+}
+
+.c5 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 16px auto 0;
+  color: #fff;
+  -webkit-letter-spacing: 5px;
+  -moz-letter-spacing: 5px;
+  -ms-letter-spacing: 5px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.c7 {
+  color: #fff;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    width: 50%;
+  }
+}
+
+<div>
+    <section
+      class="c0"
+    >
+      <div
+        class="c1"
+      >
+        <div
+          class="c2"
+        >
+          <section
+            class="c3"
+          >
+            <h2
+              class="c4 c5"
+            >
+              Sign Up
+            </h2>
+            <p
+              class="c6 c7"
+            >
+              Access all your dev content on the same place!
+            </p>
+            <form
+              action="#"
+              aria-labelledby="register-form-title"
+              class="c8"
+            >
+              <div
+                class="c9"
+              >
+                <label
+                  class="c10"
+                >
+                  Name *
+                  <input
+                    aria-label="name"
+                    class="c11"
+                    name="name"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c9"
+              >
+                <label
+                  class="c10"
+                >
+                  Last Name *
+                  <input
+                    aria-label="lastName"
+                    class="c11"
+                    name="lastName"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c9"
+              >
+                <label
+                  class="c10"
+                >
+                  Email *
+                  <input
+                    aria-label="email"
+                    class="c11"
+                    name="email"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c9"
+              >
+                <label
+                  class="c10"
+                >
+                  Password *
+                  <input
+                    aria-label="password"
+                    class="c11"
+                    name="password"
+                    type="password"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c9"
+              >
+                <label
+                  class="c10"
+                >
+                  Confirm your password *
+                  <input
+                    aria-label="passwordConfirmation"
+                    class="c11"
+                    name="passwordConfirmation"
+                    type="password"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c12"
+              >
+                <button
+                  class="c13"
+                  data-content="Sign Up"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </section>
+          <section
+            class="c14"
+          >
+            <p
+              class="c6"
+            >
+              Do you have an account?
+            </p>
+            <a
+              class="c15"
+              href="/"
+            >
+              Log in
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

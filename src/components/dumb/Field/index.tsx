@@ -17,11 +17,14 @@ export function Field({ label, children, ...props }: Props) {
           onChange={handleChange}
           error={meta.error}
           touched={meta.touched}
+          aria-label={props.name}
           {...props}
         />
       </Styled.Label>
       {meta.touched && meta.error ? (
-        <Styled.Error className='error'>{meta.error}</Styled.Error>
+        <Styled.Error className='error' aria-label='Input error'>
+          {meta.error}
+        </Styled.Error>
       ) : null}
     </Styled.Container>
   );

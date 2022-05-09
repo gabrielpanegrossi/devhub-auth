@@ -10,6 +10,7 @@ module.exports = {
       '~containers': path.resolve(__dirname, './src/containers'),
       '~services': path.resolve(__dirname, './src/services'),
       '~utils': path.resolve(__dirname, './src/utils'),
+      '~mocks': path.resolve(__dirname, './src/mocks'),
     })
   ),
 };

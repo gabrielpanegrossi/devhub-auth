@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormikHelpers } from 'formik';
 import { useRequest } from 'ahooks';
 import { useNavigate } from 'react-router-dom';
 import { Form, Field, Button, Text, Link } from '~components';
@@ -20,8 +19,10 @@ function Register() {
 
   const { runAsync, loading } = useRequest(auth.register, { manual: true });
 
-  const handleSubmit = async (values: Values, helpers: FormikHelpers<Values>) => {
+  const handleSubmit = async (values: Values) => {
+    console.log('primeiro');
     await runAsync(values);
+    console.log('segundo');
     navigate('/');
   };
 
@@ -30,35 +31,38 @@ function Register() {
       <Styled.Content>
         <Styled.Handler>
           <Styled.Register>
-            <Styled.Subtitle>Sign Up</Styled.Subtitle>
+            <Styled.Subtitle id='register-form-title'>Sign Up</Styled.Subtitle>
             <Styled.SubText>Access all your dev content on the same place!</Styled.SubText>
             <Form
               onSubmit={handleSubmit}
               initialValues={initialValues}
               validationSchema={validationSchema}
+              aria-labelledby='register-form-title'
             >
-              {({ values }: { values: Values }) => (
-                <>
-                  <Field name='name' label='Name *' value={values.name} autoFocus={true} />
-                  <Field name='lastName' label='Last Name *' value={values.lastName} />
-                  <Field name='email' label='Email *' value={values.email} />
-                  <Field
-                    name='password'
-                    label='Password *'
-                    type='password'
-                    value={values.password}
-                  />
-                  <Field
-                    name='passwordConfirmation'
-                    label='Confirm your password *'
-                    type='password'
-                    value={values.passwordConfirmation}
-                  />
-                  <Button type='submit' loading={loading}>
-                    Sign Up
-                  </Button>
-                </>
-              )}
+              {({ values }: { values: Values }) => {
+                return (
+                  <>
+                    <Field name='name' label='Name *' value={values.name} autoFocus={true} />
+                    <Field name='lastName' label='Last Name *' value={values.lastName} />
+                    <Field name='email' label='Email *' value={values.email} />
+                    <Field
+                      name='password'
+                      label='Password *'
+                      type='password'
+                      value={values.password}
+                    />
+                    <Field
+                      name='passwordConfirmation'
+                      label='Confirm your password *'
+                      type='password'
+                      value={values.passwordConfirmation}
+                    />
+                    <Button type='submit' loading={loading}>
+                      Sign Up
+                    </Button>
+                  </>
+                );
+              }}
             </Form>
           </Styled.Register>
           <Styled.Auth>

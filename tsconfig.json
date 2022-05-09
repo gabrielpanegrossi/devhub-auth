@@ -30,6 +30,8 @@
       "~services": ["./src/services"],
       "~utils/*": ["./src/utils/*"],
       "~utils": ["./src/utils"],
+      "~mocks/*": ["./src/mocks/*"],
+      "~mocks": ["./src/mocks"],
     }
   },
   "include": [

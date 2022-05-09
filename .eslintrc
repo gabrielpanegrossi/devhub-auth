@@ -30,13 +30,16 @@
           ["~components", "./src/components"],
           ["~containers", "./src/containers"],
           ["~services", "./src/services"],
-          ["~utils", "./src/utils"]
+          ["~utils", "./src/utils"],
+          ["~mocks", "./src/mocks"]
         ],
         "extensions": [".ts", ".js", ".tsx", ".json"]
       }
     }
   },
   "rules": {
+    "no-loss-of-precision": "off",
+    "@typescript-eslint/no-loss-of-precision": ["error"],
     "prettier/prettier": [
       "error",
       {

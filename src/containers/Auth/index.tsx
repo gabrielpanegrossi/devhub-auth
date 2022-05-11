@@ -5,17 +5,33 @@ import { auth } from '~services';
 import { Values } from './interface';
 import { validationSchema } from './schema';
 import * as Styled from './style';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Auth() {
   const initialValues = {
     email: '',
     password: '',
   };
+  const navigate = useNavigate();
 
-  const { runAsync, loading } = useRequest(auth.signin, { manual: true });
+  const { runAsync: runAuth, loading: loadingAuth } = useRequest(auth.signin, { manual: true });
+  const { runAsync: runTokenAuthorization, loading: loadingTokenAuthorization } = useRequest(
+    auth.validateAuthorization,
+    { manual: true }
+  );
 
-  const handleSubmit = (values: Values) => {
-    console.log(values);
+  useEffect(() => {
+    (async () => {
+      const response = await runTokenAuthorization();
+      if (response) navigate('/logged');
+    })();
+  }, [runTokenAuthorization, navigate]);
+
+  const handleSubmit = async (values: Values) => {
+    const response = await runAuth(values);
+
+    if (response) navigate('/logged');
   };
 
   return (
@@ -34,7 +50,9 @@ function Auth() {
             >
               <Field name='email' label='Email' />
               <Field name='password' label='Password' type='password' />
-              <Button>Log In</Button>
+              <Button type='submit' loading={loadingAuth}>
+                Log In
+              </Button>
               <Styled.Link to='/resetpassword'>Forgot password?</Styled.Link>
             </Form>
           </Styled.Auth>

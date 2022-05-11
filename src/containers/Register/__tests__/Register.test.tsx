@@ -2,11 +2,8 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as MockReactRouterDom from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { setupServer } from 'msw/node';
-import { handlers } from '~mocks/handlers';
 import Register from '../index';
 
-const server = setupServer(...handlers);
 const mockNavigate = jest.fn();
 
 jest.mock('ahooks', () => ({
@@ -35,9 +32,6 @@ describe('Register flow', () => {
       </Router>
     );
   });
-  beforeAll(() => server.listen());
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
 
   it('should match snpashot', () => {
     const container = render(

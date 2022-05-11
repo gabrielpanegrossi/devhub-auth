@@ -10,11 +10,14 @@ export const signin = (data: SignIn) =>
 export const validateEmail = (email: string) =>
   DefaultApi.request<ValidateEmail>('/validate-email', { method: 'POST', data: { email } });
 
-export const passwordRecovery = (email: string) =>
-  DefaultApi.request('/password-recovery', { method: 'POST', data: { email } });
+export const validateAuthorization = () =>
+  DefaultApi.request('/validate-authorization', { method: 'POST', data: {} });
 
-export const validateToken = (token: string) =>
-  DefaultApi.request('/token-validation', { method: 'POST', data: { token } });
+export const passwordRecovery = (email: string) =>
+  DefaultApi.request('password/recovery', { method: 'POST', data: { email } });
+
+export const recoveryToken = (token: string) =>
+  DefaultApi.request('password/token', { method: 'POST', data: { token } });
 
 export const newPassword = (password: string) =>
-  DefaultApi.request('/new-password', { method: 'POST', data: { password } });
+  DefaultApi.request('password/create', { method: 'POST', data: { password } });

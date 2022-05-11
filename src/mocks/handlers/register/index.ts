@@ -7,6 +7,10 @@ const Handler = [
       return res(
         ctx.delay(1000),
         ctx.status(201),
+        ctx.cookie('auth-token', '6B810C90AA9A99858230C3D5ED479096A190FA4B', {
+          maxAge: 86400,
+          secure: true,
+        }),
         ctx.json({ status: 'success', message: `User created!` })
       );
 

@@ -18,12 +18,12 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-    - name: Cache Gradle packages
-      uses: actions/cache@v3
-      with:
-        path: |
-          ./node_modules
-          ./node_modules
+      - name: Cache Gradle packages
+        uses: actions/cache@v3
+        with:
+          path: |
+            ./node_modules
+            ./node_modules
 
       - name: Build app
         run: yarn run build

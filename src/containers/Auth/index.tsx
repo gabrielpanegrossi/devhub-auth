@@ -16,10 +16,9 @@ function Auth() {
   const navigate = useNavigate();
 
   const { runAsync: runAuth, loading: loadingAuth } = useRequest(auth.signin, { manual: true });
-  const { runAsync: runTokenAuthorization, loading: loadingTokenAuthorization } = useRequest(
-    auth.validateAuthorization,
-    { manual: true }
-  );
+  const { runAsync: runTokenAuthorization } = useRequest(auth.validateAuthorization, {
+    manual: true,
+  });
 
   useEffect(() => {
     (async () => {

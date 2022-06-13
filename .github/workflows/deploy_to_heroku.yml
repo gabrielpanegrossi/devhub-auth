@@ -1,0 +1,43 @@
+# This workflow deploys to heroku.
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16.13.1
+      
+      - name: enabling yarn
+        run: corepack enable
+      
+      - name: Install dependencies
+        run: yarn
+        
+      - name: Install dependencies
+        run: yarn run build
+      
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-path
+          path: /build
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-path
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "${{HEROKU_APPNAME}}" #Must be unique in Heroku
+          heroku_email: "${{HEROKU_EMAIL}}"

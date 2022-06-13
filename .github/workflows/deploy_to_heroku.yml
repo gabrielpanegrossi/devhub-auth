@@ -1,8 +1,7 @@
 # This workflow deploys to heroku.
 name: Deploy
 
-on:
-  push
+on: push
 
 jobs:
   build:
@@ -12,16 +11,16 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16.13.1
-      
-      - name: enabling yarn
+
+      - name: Enabling yarn
         run: corepack enable
-      
+
       - name: Install dependencies
         run: yarn
-        
-      - name: Install dependencies
+
+      - name: Build app
         run: yarn run build
-      
+
       - uses: actions/upload-artifact@v3
         with:
           name: build-path
@@ -38,5 +37,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "${{secrets.HEROKU_APPNAME}}"
-          heroku_email: "${{secrets.HEROKU_EMAIL}}"
+          heroku_app_name: '${{secrets.HEROKU_APPNAME}}'
+          heroku_email: '${{secrets.HEROKU_EMAIL}}'

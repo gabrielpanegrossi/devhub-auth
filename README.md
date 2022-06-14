@@ -18,6 +18,12 @@ To run this project, you will need to add the following environment variables to
 
 `REACT_APP_BACKEND_URL`
 
+## Access the heroku server
+
+This server was build to learn how github actions work and how to configure it.
+
+`https://devhub-auth.herokuapp.com/`
+
 ## Run Locally
 
 Clone the project

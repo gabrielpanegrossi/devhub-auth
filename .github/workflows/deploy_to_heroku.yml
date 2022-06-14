@@ -38,6 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/download-artifact@v3
         with:
           name: build-path
@@ -46,5 +47,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: '${{secrets.HEROKU_APPNAME}}'
           heroku_email: '${{secrets.HEROKU_EMAIL}}'
-          appdir: 'public'
-          force: true

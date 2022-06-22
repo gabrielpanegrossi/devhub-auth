@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRequest } from 'ahooks';
 import { useNavigate } from 'react-router-dom';
-import { Form, Field, Button, Text, Link } from '~components';
+import { Form, Field, Button, Text } from '~components';
 import { auth } from '~services';
 import { Values } from './interface';
 import { validationSchema } from './schema';

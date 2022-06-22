@@ -7,7 +7,6 @@ export const FormikForm = styled(Form)`
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 24px;
 
   > :not(:first-child) {
     margin-top: 24px;

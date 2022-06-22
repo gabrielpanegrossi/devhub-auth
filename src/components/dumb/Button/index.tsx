@@ -2,7 +2,7 @@ import React from 'react';
 import { Props } from './interface';
 import * as Styled from './style';
 
-export function Button({ children, kind, type = 'button', loading, disabled }: Props) {
+export function Button({ children, kind, type = 'button', loading, disabled, onClick }: Props) {
   return (
     <Styled.Container>
       <Styled.Button
@@ -10,6 +10,7 @@ export function Button({ children, kind, type = 'button', loading, disabled }: P
         disabled={disabled || loading}
         type={type}
         data-content={loading ? '' : children}
+        onClick={onClick}
       >
         {!loading && children}
       </Styled.Button>

@@ -6,4 +6,8 @@ export const H2 = styled.h2<Props>`
   font-size: 32px;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;

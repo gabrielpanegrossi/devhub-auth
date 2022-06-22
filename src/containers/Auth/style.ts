@@ -4,8 +4,7 @@ import { Text as DefaultText, Link as DefaultLink, Title as DefaultTitle } from 
 export const Container = styled.section`
   display: flex;
   padding: 16px;
-  height: 100%;
-  background: #f2f4f7;
+  min-height: 100%;
 
   @media (min-width: 1024px) {
     align-items: center;
@@ -42,13 +41,15 @@ export const Aside = styled.aside`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 448px;
   margin: 0 auto;
   overflow: hidden;
 
   > section {
+    max-width: 448px;
+    padding: 24px;
     background: #3c444c;
     border-radius: 5px;
+    box-shadow: 0px 4px 15px 1px rgba(60, 68, 76, 0.2);
   }
 
   @media (min-width: 1024px) {
@@ -62,6 +63,10 @@ export const Auth = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  label {
+    color: #fff;
+  }
 `;
 
 export const Register = styled.section`
@@ -70,11 +75,6 @@ export const Register = styled.section`
   width: 100%;
   padding: 24px;
   margin-top: 24px;
-
-  > p {
-    color: #fff;
-    margin-right: 8px;
-  }
 `;
 
 export const Title = styled(DefaultTitle)`
@@ -86,16 +86,27 @@ export const Title = styled(DefaultTitle)`
   }
 `;
 
-export const Text = styled(DefaultText)`
+export const SubText = styled(DefaultText)`
   letter-spacing: 5px;
   width: fit-content;
   margin: 0 auto;
+  text-align: center;
 
   @media (min-width: 1024px) {
     margin: 0;
+    text-align: unset;
   }
 `;
 
+export const Text = styled(DefaultText)`
+  color: #fff;
+  margin-right: 8px;
+`;
+
 export const Link = styled(DefaultLink)`
-  margin-top: 16px;
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
 `;

@@ -38,7 +38,7 @@ function Auth() {
       <Styled.Content>
         <Styled.Article>
           <Styled.Title>DevHub</Styled.Title>
-          <Styled.Text>All your dev world in one place.</Styled.Text>
+          <Styled.SubText>All of your dev world in one place.</Styled.SubText>
         </Styled.Article>
         <Styled.Aside>
           <Styled.Auth>
@@ -52,12 +52,12 @@ function Auth() {
               <Button type='submit' loading={loadingAuth}>
                 Log In
               </Button>
-              <Styled.Link to='/resetpassword'>Forgot password?</Styled.Link>
+              <Styled.Link to='/password-recovery'>Forgot password?</Styled.Link>
             </Form>
           </Styled.Auth>
           <Styled.Register>
-            <Text>Don't have an account?</Text>
-            <Link to='/signup'>Sign up</Link>
+            <Styled.Text>Don't have an account?</Styled.Text>
+            <Styled.Link to='/signup'>Sign up</Styled.Link>
           </Styled.Register>
         </Styled.Aside>
       </Styled.Content>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Props } from './interface';
-import { Spinner as DefaultSpinner } from '../Spinner';
+import { Spinner as DefaultSpinner } from '../../Svg/Spinner';
 
 export const buttonKind = {
   primary: `color:#fff; 
@@ -34,18 +34,51 @@ export const buttonKind = {
             &:hover::before{
               opacity:1;
               background:linear-gradient(90deg, #F27A54 0%, #A154F2 100%);
+            }
+            &:disabled {
+              &:hover{
+                background:#A154F2; 
+              }
+              &:hover::before{
+                opacity:0;
+              }
             }`,
   secondary: ``,
-  tertiary: `background:transparent; 
-            color:#fff;
+  tertiary: `
+            background:transparent; 
+            color:#000;
             font-size:14px; 
-            border:none; 
-            height:fit-content; 
-            width:fit-content;`,
+            border: 1px solid rgba(0, 0, 0, 0.3); 
+  `,
+  icon: `
+        background:transparent; 
+        border: none;
+        color:#000;
+        font-size:14px; 
+        width:fit-content;
+        height:fit-content;
+        border-radius: 99px;
+        padding:10px;
+        transition: background 0.5s;
+
+        &:hover{
+          background:rgba(0, 0, 0, 0.05);
+        }
+`,
 };
+
+export const Container = styled.div`
+  position: relative;
+
+  width: 100%;
+  max-width: 285px;
+`;
 
 export const Button = styled.button<Props>`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 40px;
   border-radius: 10px;
@@ -56,12 +89,6 @@ export const Button = styled.button<Props>`
   &:disabled {
     opacity: 0.5;
   }
-`;
-
-export const Container = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 285px;
 `;
 
 export const Spinner = styled(DefaultSpinner)`

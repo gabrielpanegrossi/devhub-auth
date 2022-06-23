@@ -1,5 +1,6 @@
-export interface ValidateEmail {
-  isValid: boolean;
+export interface emailExistsResponse {
+  status: string;
+  exists: boolean;
 }
 
 export interface Register {
@@ -17,4 +18,9 @@ export interface SignIn {
 
 export interface SignInResponse {
   token: string;
+}
+
+export interface recoveryCodeResponse {
+  status: string;
+  isValid: boolean;
 }

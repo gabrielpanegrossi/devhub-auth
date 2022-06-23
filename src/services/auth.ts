@@ -1,5 +1,11 @@
 import { DefaultApi } from './api';
-import { ValidateEmail, Register, SignIn, SignInResponse } from './interface';
+import {
+  emailExistsResponse,
+  Register,
+  SignIn,
+  SignInResponse,
+  recoveryCodeResponse,
+} from './interface';
 
 export const register = (data: Register) =>
   DefaultApi.request('/register', { method: 'POST', data });
@@ -7,17 +13,17 @@ export const register = (data: Register) =>
 export const signin = (data: SignIn) =>
   DefaultApi.request<SignInResponse>('/signin', { method: 'POST', data });
 
-export const validateEmail = (email: string) =>
-  DefaultApi.request<ValidateEmail>('/validate-email', { method: 'POST', data: { email } });
+export const emailExists = (email: string) =>
+  DefaultApi.request<emailExistsResponse>('/email-exists', { method: 'POST', data: { email } });
 
 export const validateAuthorization = () =>
   DefaultApi.request('/validate-authorization', { method: 'POST', data: {} });
 
-export const passwordRecovery = (email: string) =>
-  DefaultApi.request('password/recovery', { method: 'POST', data: { email } });
-
-export const recoveryToken = (token: string) =>
-  DefaultApi.request('password/token', { method: 'POST', data: { token } });
+export const recoveryCode = (data: { email: string; code: string }) =>
+  DefaultApi.request<recoveryCodeResponse>('password-recovery/code', {
+    method: 'POST',
+    data,
+  });
 
 export const newPassword = (password: string) =>
-  DefaultApi.request('password/create', { method: 'POST', data: { password } });
+  DefaultApi.request('password-recovery/create', { method: 'POST', data: { password } });

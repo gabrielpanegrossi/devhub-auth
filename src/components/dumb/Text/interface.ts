@@ -1,4 +1,4 @@
 export interface Props {
-  children: string;
+  children: React.ReactNode;
   className?: string;
 }

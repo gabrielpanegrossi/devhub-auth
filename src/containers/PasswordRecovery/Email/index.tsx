@@ -6,21 +6,23 @@ import { validationSchema } from './schema';
 import { Values, Context } from './interface';
 import * as Styled from './style';
 import { useNavigate, useOutletContext } from 'react-router-dom';
+import { FormikHelpers } from 'formik';
 
 function Email() {
   const initialValues = {
     email: '',
   };
-  const { useRecovery, setUserRecovery } = useOutletContext<Context>();
+  const context = useOutletContext<Context>();
   const navigate = useNavigate();
 
-  const { runAsync, loading } = useRequest(auth.validateEmail, { manual: true });
+  const { runAsync, loading } = useRequest(auth.emailExists, { manual: true });
 
-  const handleSubmit = async (values: Values) => {
-    setUserRecovery({ ...useRecovery, email: values.email });
-    const response = await runAsync(values.email);
+  const handleSubmit = async ({ email }: Values, helpers: FormikHelpers<Values>) => {
+    context.setUserRecovery({ ...context.userRecovery, email });
+    const response = await runAsync(email);
 
-    if (response) navigate('/password-recovery/code');
+    if (response.exists) navigate('/password-recovery/code');
+    else helpers.setFieldError('email', "We couldn't find any account with this email.");
   };
 
   return (
@@ -37,7 +39,7 @@ function Email() {
         {({ isValid }) => (
           <>
             <Field name='email' label='Email' />
-            <Button type='submit' loading={loading} disabled={!isValid}>
+            <Button type='submit' loading={loading}>
               Continue
             </Button>
           </>

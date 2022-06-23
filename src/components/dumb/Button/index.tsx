@@ -1,16 +1,25 @@
 import React from 'react';
-import { Props } from './interface';
+import { ButtonProps } from './interface';
 import * as Styled from './style';
 
-export function Button({ children, kind, type = 'button', loading, disabled, onClick }: Props) {
+export function Button({
+  children,
+  kind,
+  type = 'button',
+  loading,
+  disabled,
+  onClick,
+  ...props
+}: ButtonProps) {
   return (
-    <Styled.Container>
+    <Styled.Container kind={kind}>
       <Styled.Button
         kind={kind}
         disabled={disabled || loading}
         type={type}
         data-content={loading ? '' : children}
         onClick={onClick}
+        {...props}
       >
         {!loading && children}
       </Styled.Button>

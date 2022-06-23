@@ -10,3 +10,4 @@ export { Link } from './dumb/Link';
 export { Spinner } from './Svg/Spinner';
 export { BackArrow } from './Svg/BackArrow';
 export { CloseX } from './Svg/CloseX';
+export { CodeField } from './dumb/CodeField';

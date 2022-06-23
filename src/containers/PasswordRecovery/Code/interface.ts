@@ -1,9 +1,12 @@
 export interface Values {
-  email: string;
+  code0: string;
+  code1: string;
+  code2: string;
+  code3: string;
 }
 
 export interface State {
-  email?: string;
+  email: string;
   code?: string;
 }
 

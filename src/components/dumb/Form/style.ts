@@ -9,6 +9,10 @@ export const FormikForm = styled(Form)`
   height: 100%;
 
   > :not(:first-child) {
-    margin-top: 24px;
+    margin-top: 32px;
+  }
+
+  > div:last-child {
+    margin-top: 40px;
   }
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Props } from './interface';
+import { ButtonProps, Props } from './interface';
 import { Spinner as DefaultSpinner } from '../../Svg/Spinner';
 
 export const buttonKind = {
@@ -43,22 +43,29 @@ export const buttonKind = {
                 opacity:0;
               }
             }`,
-  secondary: ``,
-  tertiary: `
+  secondary: `
             background:transparent; 
             color:#000;
             font-size:14px; 
             border: 1px solid rgba(0, 0, 0, 0.3); 
+  `,
+  tertiary: `
+            background:transparent; 
+            color:#000;
+            font-size:14px; 
+            border: none; 
+            &:hover{
+              text-decoration:underline;
+            }
   `,
   icon: `
         background:transparent; 
         border: none;
         color:#000;
         font-size:14px; 
-        width:fit-content;
-        height:fit-content;
+        width: 44px;
+        height: 44px;
         border-radius: 99px;
-        padding:10px;
         transition: background 0.5s;
 
         &:hover{
@@ -67,14 +74,16 @@ export const buttonKind = {
 `,
 };
 
-export const Container = styled.div`
+export const Container = styled.div<Props>`
   position: relative;
 
   width: 100%;
   max-width: 285px;
+
+  ${({ kind }) => kind === 'tertiary' && 'width:fit-content; margin:0 auto;'}
 `;
 
-export const Button = styled.button<Props>`
+export const Button = styled.button<ButtonProps>`
   position: relative;
   display: flex;
   align-items: center;

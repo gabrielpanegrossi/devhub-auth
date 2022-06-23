@@ -13,9 +13,9 @@ export const CloseX = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGEle
     <path
       d='M.75 13.25 13.25.75M.75.75l12.5 12.5'
       stroke='#777'
-      stroke-width='1.5'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     ></path>
   </svg>
 );

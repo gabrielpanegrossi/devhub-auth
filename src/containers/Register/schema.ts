@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 import { auth } from '~services';
-import { validateEmail } from '../../utils';
+import { validateEmail } from '~utils';
 
 export const validationSchema = yup.object({
   name: yup.string().required('Please insert your Name.'),
@@ -11,8 +11,8 @@ export const validationSchema = yup.object({
     .required('Please insert an email.')
     .test('checkEmailUnique', 'This email is already registered.', async function (value) {
       if (validateEmail(value)) {
-        const response = await auth.validateEmail(value || '');
-        if (response) return response.isValid;
+        const response = await auth.emailExists(value || '');
+        if (response) return response.exists;
       }
       return false;
     }),

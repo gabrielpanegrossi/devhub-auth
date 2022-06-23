@@ -1,4 +1,4 @@
 export interface State {
   email?: string;
-  token?: string;
+  code?: string;
 }

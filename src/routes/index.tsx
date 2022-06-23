@@ -1,5 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import { Auth, Register, PasswordRecoveryTemplate, PasswordRecoveryEmail } from '~containers';
+import {
+  Auth,
+  Register,
+  PasswordRecoveryTemplate,
+  PasswordRecoveryEmail,
+  PasswordRecoveryCode,
+} from '~containers';
 
 const Router = () => {
   return (
@@ -8,6 +14,7 @@ const Router = () => {
       <Route path='signup' element={<Register />} />
       <Route path='password-recovery' element={<PasswordRecoveryTemplate />}>
         <Route index element={<PasswordRecoveryEmail />} />
+        <Route path='code' element={<PasswordRecoveryCode />} />
       </Route>
     </Routes>
   );

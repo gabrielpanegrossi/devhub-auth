@@ -12,9 +12,9 @@ export const BackArrow = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVG
     <path
       d='M23.25 12H.75M11.25 1.5.75 12l10.5 10.5'
       stroke='#777'
-      stroke-width='1.5'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     ></path>
   </svg>
 );

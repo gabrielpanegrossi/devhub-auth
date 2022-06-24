@@ -6,16 +6,16 @@ import Register from '../index';
 
 const mockNavigate = jest.fn();
 
-jest.mock('ahooks', () => ({
-  useRequest: () => ({
-    runAsync: async () => {},
-    loading: false,
+jest.mock('react-query', () => ({
+  useMutation: () => ({
+    mutateAsync: async () => {},
+    isLoading: false,
   }),
 }));
 
 jest.mock('~services', () => ({
   auth: {
-    validateEmail: async () => ({ isValid: true }),
+    emailExists: async () => ({ exists: true }),
   },
 }));
 

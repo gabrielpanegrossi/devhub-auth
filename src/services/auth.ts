@@ -4,7 +4,7 @@ import {
   Register,
   SignIn,
   SignInResponse,
-  recoveryCodeResponse,
+  passwordRecoveryCodeResponse,
 } from './interface';
 
 export const register = (data: Register) =>
@@ -19,8 +19,8 @@ export const emailExists = (email: string) =>
 export const validateAuthorization = () =>
   DefaultApi.request('/validate-authorization', { method: 'POST', data: {} });
 
-export const recoveryCode = (data: { email: string; code: string }) =>
-  DefaultApi.request<recoveryCodeResponse>('password-recovery/code', {
+export const passwordRecoveryCode = (data: { email: string; code: string }) =>
+  DefaultApi.request<passwordRecoveryCodeResponse>('password-recovery/code', {
     method: 'POST',
     data,
   });

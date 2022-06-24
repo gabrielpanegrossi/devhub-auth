@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useRequest } from 'ahooks';
 import { Form, CodeField, Button, Subtitle } from '~components';
 import { auth } from '~services';
 import { validationSchema } from './schema';
@@ -7,6 +6,7 @@ import { Values, Context } from './interface';
 import * as Styled from './style';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import { FormikHelpers } from 'formik';
+import { useMutation } from 'react-query';
 
 function Email() {
   const initialValues = {
@@ -18,7 +18,7 @@ function Email() {
   const context = useOutletContext<Context>();
   const navigate = useNavigate();
 
-  const { runAsync, loading } = useRequest(auth.recoveryCode, { manual: true });
+  const { mutateAsync, isLoading } = useMutation(auth.passwordRecoveryCode);
 
   const handleSubmit = async (
     { code0, code1, code2, code3 }: Values,
@@ -27,7 +27,7 @@ function Email() {
     const code = code0 + code1 + code2 + code3;
     context.setUserRecovery({ ...context.userRecovery, code });
 
-    const response = await runAsync({ ...context.userRecovery, code });
+    const response = await mutateAsync({ ...context.userRecovery, code });
     console.log({ ...context.userRecovery, code }, response);
     if (response.isValid) navigate('/password-recovery/set-password');
     else
@@ -57,7 +57,7 @@ function Email() {
         {({ isValid }) => (
           <>
             <CodeField name='code' label='Code' type='tel' quantity={4} />
-            <Button type='submit' loading={loading} disabled={!isValid}>
+            <Button type='submit' loading={isLoading} disabled={!isValid}>
               Continue
             </Button>
           </>

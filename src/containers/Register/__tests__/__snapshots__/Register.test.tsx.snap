@@ -3,11 +3,35 @@
 exports[`Register flow should match snpashot 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": .c9 {
+  "baseElement": .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.c7 > :not(:first-child) {
+  margin-top: 32px;
+}
+
+.c7 > div:last-child {
+  margin-top: 40px;
+}
+
+.c8 {
   width: 100%;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16,22 +40,41 @@ Object {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  font-size: 10px;
-  color: white;
   text-transform: uppercase;
+  font-size: 12px;
 }
 
-.c11 {
+.c10 {
   width: 100%;
   height: 40px;
   margin-top: 8px;
   border-radius: 3px;
   outline: transparent;
   padding: 0 8px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-left: 3px solid #a154f2;
 }
 
-.c13 {
+.c11 {
   position: relative;
+  width: 100%;
+  max-width: 285px;
+}
+
+.c12 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
   height: 40px;
   border-radius: 10px;
@@ -51,11 +94,11 @@ Object {
   transition: background 0.5s;
 }
 
-.c13:hover {
+.c12:hover {
   background: #F27A54;
 }
 
-.c13:before {
+.c12:before {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -83,64 +126,55 @@ Object {
   z-index: 1;
 }
 
-.c13:hover::before {
+.c12:hover::before {
   opacity: 1;
   background: linear-gradient(90deg,#F27A54 0%,#A154F2 100%);
 }
 
-.c13:disabled {
+.c12:disabled:hover {
+  background: #A154F2;
+}
+
+.c12:disabled:hover::before {
+  opacity: 0;
+}
+
+.c12:disabled {
   opacity: 0.5;
 }
 
-.c12 {
-  position: relative;
-  width: 100%;
-  max-width: 285px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 24px;
-}
-
-.c8 > :not(:first-child) {
-  margin-top: 24px;
-}
-
 .c4 {
-  font-size: 32px;
-  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 0;
+  font-size: 44px;
+  -webkit-letter-spacing: 5px;
+  -moz-letter-spacing: 5px;
+  -ms-letter-spacing: 5px;
+  letter-spacing: 5px;
+  color: #a154f2;
 }
 
 .c6 {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.c15 {
+.c14 {
   margin: 0;
   padding: 0;
-  font-size: 14px;
-  color: #fff;
+  font-size: 16px;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c15:hover {
+.c14:visited {
+  color: #000;
+}
+
+.c14:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -151,8 +185,7 @@ Object {
   display: -ms-flexbox;
   display: flex;
   padding: 16px;
-  height: 100%;
-  background: #f2f4f7;
+  min-height: 100%;
 }
 
 .c1 {
@@ -160,6 +193,13 @@ Object {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -168,6 +208,14 @@ Object {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+}
+
+.c1 > section {
+  max-width: 448px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px 1px rgba(0,0,0,0.2);
 }
 
 .c2 {
@@ -187,36 +235,18 @@ Object {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  max-width: 448px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.c2 > section {
-  background: #3c444c;
-  border-radius: 5px;
+  margin: 0 50px;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
+  margin-bottom: 16px;
 }
 
-.c14 {
+.c3 > p {
+  text-align: center;
+}
+
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -230,8 +260,7 @@ Object {
   margin-top: 24px;
 }
 
-.c14 > p {
-  color: #fff;
+.c13 > p {
   margin-right: 8px;
 }
 
@@ -240,7 +269,6 @@ Object {
   width: -moz-fit-content;
   width: fit-content;
   margin: 16px auto 0;
-  color: #fff;
   -webkit-letter-spacing: 5px;
   -moz-letter-spacing: 5px;
   -ms-letter-spacing: 5px;
@@ -248,8 +276,32 @@ Object {
   text-transform: uppercase;
 }
 
-.c7 {
-  color: #fff;
+.c15:hover {
+  color: #a154f2;
+}
+
+@media (max-width:768px) {
+  .c9 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width:768px) {
+  .c4 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width:768px) {
+  .c6 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:768px) {
+  .c14 {
+    font-size: 14px;
+  }
 }
 
 @media (min-width:1024px) {
@@ -271,12 +323,6 @@ Object {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }
-}
-
-@media (min-width:1024px) {
-  .c2 {
-    width: 50%;
   }
 }
 
@@ -288,133 +334,133 @@ Object {
         <div
           class="c1"
         >
-          <div
+          <section
             class="c2"
           >
-            <section
+            <div
               class="c3"
             >
-              <h2
+              <h1
                 class="c4 c5"
               >
                 Sign Up
-              </h2>
-              <p
-                class="c6 c7"
-              >
-                Access all your dev content on the same place!
-              </p>
-              <form
-                action="#"
-                aria-labelledby="register-form-title"
-                class="c8"
-              >
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Name *
-                    <input
-                      aria-label="name"
-                      class="c11"
-                      name="name"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Last Name *
-                    <input
-                      aria-label="lastName"
-                      class="c11"
-                      name="lastName"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Email *
-                    <input
-                      aria-label="email"
-                      class="c11"
-                      name="email"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Password *
-                    <input
-                      aria-label="password"
-                      class="c11"
-                      name="password"
-                      type="password"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Confirm your password *
-                    <input
-                      aria-label="passwordConfirmation"
-                      class="c11"
-                      name="passwordConfirmation"
-                      type="password"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c12"
-                >
-                  <button
-                    class="c13"
-                    data-content="Sign Up"
-                    type="submit"
-                  >
-                    Sign Up
-                  </button>
-                </div>
-              </form>
-            </section>
-            <section
-              class="c14"
-            >
+              </h1>
               <p
                 class="c6"
               >
-                Do you have an account?
+                Access all your dev content on the same place!
               </p>
-              <a
-                class="c15"
-                href="/"
+            </div>
+            <form
+              action="#"
+              aria-label="register-form-title"
+              class="c7"
+            >
+              <div
+                class="c8"
               >
-                Log in
-              </a>
-            </section>
-          </div>
+                <label
+                  class="c9"
+                >
+                  Name *
+                  <input
+                    aria-label="name"
+                    class="c10"
+                    name="name"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Last Name *
+                  <input
+                    aria-label="lastName"
+                    class="c10"
+                    name="lastName"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Email *
+                  <input
+                    aria-label="email"
+                    class="c10"
+                    name="email"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Password *
+                  <input
+                    aria-label="password"
+                    class="c10"
+                    name="password"
+                    type="password"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Confirm your password *
+                  <input
+                    aria-label="passwordConfirmation"
+                    class="c10"
+                    name="passwordConfirmation"
+                    type="password"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c11"
+              >
+                <button
+                  class="c12"
+                  data-content="Sign Up"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </section>
+          <section
+            class="c13"
+          >
+            <p
+              class="c6"
+            >
+              Do you have an account?
+            </p>
+            <a
+              class="c14 c15"
+              href="/"
+            >
+              Log in
+            </a>
+          </section>
         </div>
       </section>
     </div>
@@ -425,142 +471,166 @@ Object {
         <div
           class="c1"
         >
-          <div
+          <section
             class="c2"
           >
-            <section
+            <div
               class="c3"
             >
-              <h2
+              <h1
                 class="c4 c5"
               >
                 Sign Up
-              </h2>
-              <p
-                class="c6 c7"
-              >
-                Access all your dev content on the same place!
-              </p>
-              <form
-                action="#"
-                aria-labelledby="register-form-title"
-                class="c8"
-              >
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Name *
-                    <input
-                      aria-label="name"
-                      class="c11"
-                      name="name"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Last Name *
-                    <input
-                      aria-label="lastName"
-                      class="c11"
-                      name="lastName"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Email *
-                    <input
-                      aria-label="email"
-                      class="c11"
-                      name="email"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Password *
-                    <input
-                      aria-label="password"
-                      class="c11"
-                      name="password"
-                      type="password"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c9"
-                >
-                  <label
-                    class="c10"
-                  >
-                    Confirm your password *
-                    <input
-                      aria-label="passwordConfirmation"
-                      class="c11"
-                      name="passwordConfirmation"
-                      type="password"
-                      value=""
-                    />
-                  </label>
-                </div>
-                <div
-                  class="c12"
-                >
-                  <button
-                    class="c13"
-                    data-content="Sign Up"
-                    type="submit"
-                  >
-                    Sign Up
-                  </button>
-                </div>
-              </form>
-            </section>
-            <section
-              class="c14"
-            >
+              </h1>
               <p
                 class="c6"
               >
-                Do you have an account?
+                Access all your dev content on the same place!
               </p>
-              <a
-                class="c15"
-                href="/"
+            </div>
+            <form
+              action="#"
+              aria-label="register-form-title"
+              class="c7"
+            >
+              <div
+                class="c8"
               >
-                Log in
-              </a>
-            </section>
-          </div>
+                <label
+                  class="c9"
+                >
+                  Name *
+                  <input
+                    aria-label="name"
+                    class="c10"
+                    name="name"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Last Name *
+                  <input
+                    aria-label="lastName"
+                    class="c10"
+                    name="lastName"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Email *
+                  <input
+                    aria-label="email"
+                    class="c10"
+                    name="email"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Password *
+                  <input
+                    aria-label="password"
+                    class="c10"
+                    name="password"
+                    type="password"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c8"
+              >
+                <label
+                  class="c9"
+                >
+                  Confirm your password *
+                  <input
+                    aria-label="passwordConfirmation"
+                    class="c10"
+                    name="passwordConfirmation"
+                    type="password"
+                    value=""
+                  />
+                </label>
+              </div>
+              <div
+                class="c11"
+              >
+                <button
+                  class="c12"
+                  data-content="Sign Up"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </section>
+          <section
+            class="c13"
+          >
+            <p
+              class="c6"
+            >
+              Do you have an account?
+            </p>
+            <a
+              class="c14 c15"
+              href="/"
+            >
+              Log in
+            </a>
+          </section>
         </div>
       </section>
     </div>
   </body>,
-  "container": .c9 {
+  "container": .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.c7 > :not(:first-child) {
+  margin-top: 32px;
+}
+
+.c7 > div:last-child {
+  margin-top: 40px;
+}
+
+.c8 {
   width: 100%;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -569,22 +639,41 @@ Object {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  font-size: 10px;
-  color: white;
   text-transform: uppercase;
+  font-size: 12px;
 }
 
-.c11 {
+.c10 {
   width: 100%;
   height: 40px;
   margin-top: 8px;
   border-radius: 3px;
   outline: transparent;
   padding: 0 8px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-left: 3px solid #a154f2;
 }
 
-.c13 {
+.c11 {
   position: relative;
+  width: 100%;
+  max-width: 285px;
+}
+
+.c12 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
   height: 40px;
   border-radius: 10px;
@@ -604,11 +693,11 @@ Object {
   transition: background 0.5s;
 }
 
-.c13:hover {
+.c12:hover {
   background: #F27A54;
 }
 
-.c13:before {
+.c12:before {
   position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -636,64 +725,55 @@ Object {
   z-index: 1;
 }
 
-.c13:hover::before {
+.c12:hover::before {
   opacity: 1;
   background: linear-gradient(90deg,#F27A54 0%,#A154F2 100%);
 }
 
-.c13:disabled {
+.c12:disabled:hover {
+  background: #A154F2;
+}
+
+.c12:disabled:hover::before {
+  opacity: 0;
+}
+
+.c12:disabled {
   opacity: 0.5;
 }
 
-.c12 {
-  position: relative;
-  width: 100%;
-  max-width: 285px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 24px;
-}
-
-.c8 > :not(:first-child) {
-  margin-top: 24px;
-}
-
 .c4 {
-  font-size: 32px;
-  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 0;
+  font-size: 44px;
+  -webkit-letter-spacing: 5px;
+  -moz-letter-spacing: 5px;
+  -ms-letter-spacing: 5px;
+  letter-spacing: 5px;
+  color: #a154f2;
 }
 
 .c6 {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.c15 {
+.c14 {
   margin: 0;
   padding: 0;
-  font-size: 14px;
-  color: #fff;
+  font-size: 16px;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c15:hover {
+.c14:visited {
+  color: #000;
+}
+
+.c14:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -704,8 +784,7 @@ Object {
   display: -ms-flexbox;
   display: flex;
   padding: 16px;
-  height: 100%;
-  background: #f2f4f7;
+  min-height: 100%;
 }
 
 .c1 {
@@ -713,6 +792,13 @@ Object {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -721,6 +807,14 @@ Object {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+}
+
+.c1 > section {
+  max-width: 448px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px 1px rgba(0,0,0,0.2);
 }
 
 .c2 {
@@ -740,36 +834,18 @@ Object {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  max-width: 448px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.c2 > section {
-  background: #3c444c;
-  border-radius: 5px;
+  margin: 0 50px;
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
+  margin-bottom: 16px;
 }
 
-.c14 {
+.c3 > p {
+  text-align: center;
+}
+
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -783,8 +859,7 @@ Object {
   margin-top: 24px;
 }
 
-.c14 > p {
-  color: #fff;
+.c13 > p {
   margin-right: 8px;
 }
 
@@ -793,7 +868,6 @@ Object {
   width: -moz-fit-content;
   width: fit-content;
   margin: 16px auto 0;
-  color: #fff;
   -webkit-letter-spacing: 5px;
   -moz-letter-spacing: 5px;
   -ms-letter-spacing: 5px;
@@ -801,8 +875,32 @@ Object {
   text-transform: uppercase;
 }
 
-.c7 {
-  color: #fff;
+.c15:hover {
+  color: #a154f2;
+}
+
+@media (max-width:768px) {
+  .c9 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width:768px) {
+  .c4 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width:768px) {
+  .c6 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:768px) {
+  .c14 {
+    font-size: 14px;
+  }
 }
 
 @media (min-width:1024px) {
@@ -827,12 +925,6 @@ Object {
   }
 }
 
-@media (min-width:1024px) {
-  .c2 {
-    width: 50%;
-  }
-}
-
 <div>
     <section
       class="c0"
@@ -840,133 +932,133 @@ Object {
       <div
         class="c1"
       >
-        <div
+        <section
           class="c2"
         >
-          <section
+          <div
             class="c3"
           >
-            <h2
+            <h1
               class="c4 c5"
             >
               Sign Up
-            </h2>
-            <p
-              class="c6 c7"
-            >
-              Access all your dev content on the same place!
-            </p>
-            <form
-              action="#"
-              aria-labelledby="register-form-title"
-              class="c8"
-            >
-              <div
-                class="c9"
-              >
-                <label
-                  class="c10"
-                >
-                  Name *
-                  <input
-                    aria-label="name"
-                    class="c11"
-                    name="name"
-                    value=""
-                  />
-                </label>
-              </div>
-              <div
-                class="c9"
-              >
-                <label
-                  class="c10"
-                >
-                  Last Name *
-                  <input
-                    aria-label="lastName"
-                    class="c11"
-                    name="lastName"
-                    value=""
-                  />
-                </label>
-              </div>
-              <div
-                class="c9"
-              >
-                <label
-                  class="c10"
-                >
-                  Email *
-                  <input
-                    aria-label="email"
-                    class="c11"
-                    name="email"
-                    value=""
-                  />
-                </label>
-              </div>
-              <div
-                class="c9"
-              >
-                <label
-                  class="c10"
-                >
-                  Password *
-                  <input
-                    aria-label="password"
-                    class="c11"
-                    name="password"
-                    type="password"
-                    value=""
-                  />
-                </label>
-              </div>
-              <div
-                class="c9"
-              >
-                <label
-                  class="c10"
-                >
-                  Confirm your password *
-                  <input
-                    aria-label="passwordConfirmation"
-                    class="c11"
-                    name="passwordConfirmation"
-                    type="password"
-                    value=""
-                  />
-                </label>
-              </div>
-              <div
-                class="c12"
-              >
-                <button
-                  class="c13"
-                  data-content="Sign Up"
-                  type="submit"
-                >
-                  Sign Up
-                </button>
-              </div>
-            </form>
-          </section>
-          <section
-            class="c14"
-          >
+            </h1>
             <p
               class="c6"
             >
-              Do you have an account?
+              Access all your dev content on the same place!
             </p>
-            <a
-              class="c15"
-              href="/"
+          </div>
+          <form
+            action="#"
+            aria-label="register-form-title"
+            class="c7"
+          >
+            <div
+              class="c8"
             >
-              Log in
-            </a>
-          </section>
-        </div>
+              <label
+                class="c9"
+              >
+                Name *
+                <input
+                  aria-label="name"
+                  class="c10"
+                  name="name"
+                  value=""
+                />
+              </label>
+            </div>
+            <div
+              class="c8"
+            >
+              <label
+                class="c9"
+              >
+                Last Name *
+                <input
+                  aria-label="lastName"
+                  class="c10"
+                  name="lastName"
+                  value=""
+                />
+              </label>
+            </div>
+            <div
+              class="c8"
+            >
+              <label
+                class="c9"
+              >
+                Email *
+                <input
+                  aria-label="email"
+                  class="c10"
+                  name="email"
+                  value=""
+                />
+              </label>
+            </div>
+            <div
+              class="c8"
+            >
+              <label
+                class="c9"
+              >
+                Password *
+                <input
+                  aria-label="password"
+                  class="c10"
+                  name="password"
+                  type="password"
+                  value=""
+                />
+              </label>
+            </div>
+            <div
+              class="c8"
+            >
+              <label
+                class="c9"
+              >
+                Confirm your password *
+                <input
+                  aria-label="passwordConfirmation"
+                  class="c10"
+                  name="passwordConfirmation"
+                  type="password"
+                  value=""
+                />
+              </label>
+            </div>
+            <div
+              class="c11"
+            >
+              <button
+                class="c12"
+                data-content="Sign Up"
+                type="submit"
+              >
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </section>
+        <section
+          class="c13"
+        >
+          <p
+            class="c6"
+          >
+            Do you have an account?
+          </p>
+          <a
+            class="c14 c15"
+            href="/"
+          >
+            Log in
+          </a>
+        </section>
       </div>
     </section>
   </div>,

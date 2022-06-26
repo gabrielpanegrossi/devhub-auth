@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ButtonProps, Props } from './interface';
-import { Spinner as DefaultSpinner } from '../../Svg/Spinner';
+import { Spinner as DefaultSpinner } from '../../svg/Spinner';
 
 export const buttonKind = {
   primary: `color:#fff; 

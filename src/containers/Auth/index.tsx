@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRequest } from 'ahooks';
 import { Form, Field, Button } from '~components';
 import { auth } from '~services';
 import { Values } from './interface';
@@ -7,6 +6,7 @@ import { validationSchema } from './schema';
 import * as Styled from './style';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMutation } from 'react-query';
 
 function Auth() {
   const initialValues = {
@@ -15,10 +15,8 @@ function Auth() {
   };
   const navigate = useNavigate();
 
-  const { runAsync: runAuth, loading: loadingAuth } = useRequest(auth.signin, { manual: true });
-  const { runAsync: runTokenAuthorization } = useRequest(auth.validateAuthorization, {
-    manual: true,
-  });
+  const { mutateAsync: runAuth, isLoading: loadingAuth } = useMutation(auth.signin);
+  const { mutateAsync: runTokenAuthorization } = useMutation(auth.validateAuthorization);
 
   useEffect(() => {
     (async () => {
@@ -28,9 +26,8 @@ function Auth() {
   }, [runTokenAuthorization, navigate]);
 
   const handleSubmit = async (values: Values) => {
-    const response = await runAuth(values);
-
-    if (response) navigate('/logged');
+    await runAuth(values);
+    navigate('/logged');
   };
 
   return (

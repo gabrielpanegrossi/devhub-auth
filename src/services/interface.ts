@@ -20,7 +20,7 @@ export interface SignInResponse {
   token: string;
 }
 
-export interface recoveryCodeResponse {
+export interface passwordRecoveryCodeResponse {
   status: string;
   isValid: boolean;
 }

@@ -1,11 +1,11 @@
 import React from 'react';
-import { useRequest } from 'ahooks';
 import { useNavigate } from 'react-router-dom';
 import { Form, Field, Button, Text } from '~components';
 import { auth } from '~services';
 import { Values } from './interface';
 import { validationSchema } from './schema';
 import * as Styled from './style';
+import { useMutation } from 'react-query';
 
 function Register() {
   const initialValues = {
@@ -17,10 +17,10 @@ function Register() {
   };
   const navigate = useNavigate();
 
-  const { runAsync, loading } = useRequest(auth.register, { manual: true });
+  const { mutateAsync, isLoading } = useMutation(auth.register);
 
   const handleSubmit = async (values: Values) => {
-    await runAsync(values);
+    await mutateAsync(values);
     navigate('/');
   };
 
@@ -56,7 +56,7 @@ function Register() {
                     type='password'
                     value={values.passwordConfirmation}
                   />
-                  <Button type='submit' loading={loading}>
+                  <Button type='submit' loading={isLoading}>
                     Sign Up
                   </Button>
                 </>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRequest } from 'ahooks';
 import { Form, Field, Button, Subtitle } from '~components';
 import { auth } from '~services';
 import { validationSchema } from './schema';
@@ -7,6 +6,7 @@ import { Values, Context } from './interface';
 import * as Styled from './style';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import { FormikHelpers } from 'formik';
+import { useMutation } from 'react-query';
 
 function Email() {
   const initialValues = {
@@ -15,11 +15,11 @@ function Email() {
   const context = useOutletContext<Context>();
   const navigate = useNavigate();
 
-  const { runAsync, loading } = useRequest(auth.emailExists, { manual: true });
+  const { mutateAsync, isLoading } = useMutation(auth.emailExists);
 
   const handleSubmit = async ({ email }: Values, helpers: FormikHelpers<Values>) => {
     context.setUserRecovery({ ...context.userRecovery, email });
-    const response = await runAsync(email);
+    const response = await mutateAsync(email);
 
     if (response.exists) navigate('/password-recovery/code');
     else helpers.setFieldError('email', "We couldn't find any account with this email.");
@@ -39,7 +39,7 @@ function Email() {
         {({ isValid }) => (
           <>
             <Field name='email' label='Email' />
-            <Button type='submit' loading={loading}>
+            <Button type='submit' loading={isLoading}>
               Continue
             </Button>
           </>

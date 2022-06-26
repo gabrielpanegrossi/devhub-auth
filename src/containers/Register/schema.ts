@@ -10,9 +10,9 @@ export const validationSchema = yup.object({
     .email('Please insert a valid email.')
     .required('Please insert an email.')
     .test('checkEmailUnique', 'This email is already registered.', async function (value) {
-      if (validateEmail(value)) {
-        const response = await auth.emailExists(value || '');
-        if (response) return response.exists;
+      if (validateEmail(value) && value) {
+        const response = await auth.emailExists(value);
+        if (response) return !response.exists;
       }
       return false;
     }),

@@ -26,9 +26,8 @@ function Auth() {
   }, [runTokenAuthorization, navigate]);
 
   const handleSubmit = async (values: Values) => {
-    const response = await runAuth(values);
-
-    if (response) navigate('/logged');
+    await runAuth(values);
+    navigate('/logged');
   };
 
   return (

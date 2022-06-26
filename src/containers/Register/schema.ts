@@ -12,7 +12,7 @@ export const validationSchema = yup.object({
     .test('checkEmailUnique', 'This email is already registered.', async function (value) {
       if (validateEmail(value) && value) {
         const response = await auth.emailExists(value);
-        if (response) return response.exists;
+        if (response) return !response.exists;
       }
       return false;
     }),

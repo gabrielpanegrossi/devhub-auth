@@ -1,23 +1,29 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import * as MockReactRouterDom from 'react-router-dom';
+import { AxiosInstance } from 'axios';
 import { BrowserRouter as Router } from 'react-router-dom';
+import * as MockReactRouterDom from 'react-router-dom';
 import Register from '../index';
-
-const mockNavigate = jest.fn();
+import { act } from 'react-dom/test-utils';
 
 jest.mock('react-query', () => ({
   useMutation: () => ({
-    mutateAsync: async () => {},
+    mutateAsync: async (asyncFunction: AxiosInstance) => asyncFunction,
     isLoading: false,
   }),
 }));
 
 jest.mock('~services', () => ({
   auth: {
-    emailExists: async () => ({ exists: true }),
+    emailExists: async (email: string) => {
+      if (email === 'gabriel@gmail.com') return { exists: false };
+      return { exists: true };
+    },
+    register: async () => ({ status: 'Success' }),
   },
 }));
+
+const mockNavigate = jest.fn();
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual<typeof MockReactRouterDom>('react-router-dom'),
@@ -25,41 +31,56 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('Register flow', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     render(
       <Router>
         <Register />
       </Router>
     );
+
+    await waitFor(() => {
+      expect(screen.getByRole('form')).toBeInTheDocument();
+    });
   });
 
-  it('should match snpashot', () => {
+  it('should match snpashot', async () => {
     const container = render(
       <Router>
         <Register />
       </Router>
     );
-    expect(container).toMatchSnapshot();
+    await waitFor(() => {
+      expect(container).toMatchSnapshot();
+    });
   });
 
   it('should render', () => {
-    expect(screen.queryByRole('form')).toBeInTheDocument();
-    expect(screen.queryByRole('button')).toBeEnabled();
+    expect(screen.getByRole('form')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeEnabled();
   });
 
   it('should validate all form fields', async () => {
-    const button = screen.queryByRole('button');
-
-    if (button) userEvent.click(button);
+    const button = screen.getByRole('button');
+    userEvent.click(button);
 
     await waitFor(() => {
-      expect(screen.queryAllByLabelText('Input error').length).toBe(5);
+      expect(screen.getAllByLabelText('Input error').length).toBeGreaterThan(0);
+    });
+  });
+
+  it('should reject an already registered email', async () => {
+    const button = screen.getByRole('button');
+    const emailField = screen.getByLabelText('email');
+
+    fireEvent.input(emailField, { target: { value: 'reject@gmail.com' } });
+    fireEvent.click(button);
+
+    await waitFor(() => {
+      expect(screen.getByText('This email is already registered.')).toBeInTheDocument();
     });
   });
 
   it('should submit form and navigate to next page', async () => {
-    const user = userEvent.setup();
-
     const button = screen.getByRole('button');
     const nameField = screen.getByLabelText('name');
     const lastNameField = screen.getByLabelText('lastName');
@@ -67,15 +88,14 @@ describe('Register flow', () => {
     const passwordField = screen.getByLabelText('password');
     const confirmPasswordField = screen.getByLabelText('passwordConfirmation');
 
-    await user.type(nameField, 'Gabriel');
-    await user.type(lastNameField, 'Santos');
-    await user.type(emailField, 'gabriel@gmail.com');
-    await user.type(passwordField, 'salada123');
-    await user.type(confirmPasswordField, 'salada123');
+    fireEvent.input(nameField, { target: { value: 'Gabriel' } });
+    fireEvent.input(lastNameField, { target: { value: 'Santos' } });
+    fireEvent.input(emailField, { target: { value: 'gabriel@gmail.com' } });
+    fireEvent.input(passwordField, { target: { value: 'salada123' } });
+    fireEvent.input(confirmPasswordField, { target: { value: 'salada123' } });
+    fireEvent.click(button);
 
-    await user.click(button);
-
-    await waitFor(() => {
+    waitFor(() => {
       expect(mockNavigate).toBeCalledWith('/');
     });
   });

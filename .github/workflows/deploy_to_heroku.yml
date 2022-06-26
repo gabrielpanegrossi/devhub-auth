@@ -17,6 +17,9 @@ jobs:
       - name: Enabling yarn
         run: corepack enable
 
+      - name: Updating yarn
+        run: yarn policies set-version stable
+
       - name: Install dependencies
         run: yarn
 
